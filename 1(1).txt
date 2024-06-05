@@ -1,0 +1,71 @@
+-- SQLyog 企业版 - MySQL GUI v8.14 
+-- MySQL - 8.0.13 : Database - b2bdata
+*********************************************************************
+
+SET NAMES utf8;
+
+SET SQL_MODE='';
+
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO';
+SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0;
+
+CREATE DATABASE IF NOT EXISTS `b2bdata` DEFAULT CHARACTER SET utf8;
+
+USE `b2bdata`;
+
+-- Table structure for table `student`
+
+DROP TABLE IF EXISTS `student`;
+
+CREATE TABLE `student` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(20) NOT NULL,
+  `grade` float DEFAULT NULL,
+  `gender` char(2) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+-- Data for the table `student`
+
+LOCK TABLES `student` WRITE;
+
+INSERT INTO `student` (`id`, `name`, `grade`, `gender`) VALUES 
+(1, 'dsad', 2, '男'),
+(2, 'sda', 2, '女');
+
+UNLOCK TABLES;
+
+-- Table structure for table `user`
+
+DROP TABLE IF EXISTS `user`;
+
+CREATE TABLE `user` (
+  `uaccount` int NOT NULL AUTO_INCREMENT COMMENT '账号',
+  `upassword` varbinary(255) NOT NULL COMMENT '密码',
+  `uname` varbinary(255) NOT NULL COMMENT '姓名',
+  `usex` varbinary(50) NOT NULL COMMENT '性别',
+  PRIMARY KEY (`uaccount`)
+) ENGINE=InnoDB AUTO_INCREMENT=10026 DEFAULT CHARSET=utf8;
+
+-- Data for the table `user`
+
+LOCK TABLES `user` WRITE;
+
+INSERT INTO `user` (`uaccount`, `upassword`, `uname`, `usex`) VALUES 
+(10018, '1', '12', 'WS'),
+(10019, '1', 'wangjin', '1'),
+(10020, '123', '王三', '男'),
+(10021, '1', '我', '男'),
+(10022, '1', '1211', '的'),
+(10023, '2', 'whhh', 'nan'),
+(10024, '1', 'whhh', 'nan'),
+(10025, '1', 'hh', 'nan');
+
+UNLOCK TABLES;
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+SET SQL_NOTES=@OLD_SQL_NOTES;
