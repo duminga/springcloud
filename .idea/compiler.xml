@@ -8,13 +8,15 @@
         <outputRelativeToContentRoot value="true" />
         <module name="common" />
         <module name="user-consumer" />
-        <module name="common-module" />
         <module name="goods-provider" />
         <module name="user-provider" />
         <module name="goods-consumer" />
         <module name="eureka-server" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="common-module" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
